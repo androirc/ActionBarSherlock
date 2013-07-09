@@ -1,7 +1,8 @@
 apply plugin: 'android-library'
+apply plugin: 'maven'
 
 dependencies {
-  compile 'com.google.android:support-v4:r7'
+  compile 'com.android.support:support-v4:13.0.0'
 }
 
 android {
@@ -16,3 +17,16 @@ android {
     }
   }
 }
+
+uploadArchives {
+  repositories {
+    mavenDeployer {
+      repository(url: "http://maven.madalynn.eu:8081/nexus/content/repositories/snapshots") {
+        authentication(userName: maven_user, password: maven_password)
+      }
+      pom.artifactId = "parent"
+      pom.groupId = "com.actionbarsherlock"
+    }
+  }
+}
+
