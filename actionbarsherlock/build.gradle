@@ -2,12 +2,12 @@ apply plugin: 'android-library'
 apply plugin: 'maven'
 
 dependencies {
-  compile 'com.android.support:support-v4:13.0.0'
+  compile 'com.android.support:support-v4:19.0.+'
 }
 
 android {
   compileSdkVersion 14
-  buildToolsVersion '17'
+  buildToolsVersion '17.0.0'
 
   sourceSets {
     main {
@@ -29,4 +29,3 @@ uploadArchives {
     }
   }
 }
-
